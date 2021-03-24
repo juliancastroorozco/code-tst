@@ -4,7 +4,7 @@
   "description": "Persuit Coding Test",
   "type": "module",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "lint:check": "standard",
     "lint:fix": "standard --fix"
   },
@@ -16,9 +16,11 @@
     "standard": "^14.3.4"
   },
   "dependencies": {
-    "got": "^11.5.1"
+    "got": "^11.8.2"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   }
 }

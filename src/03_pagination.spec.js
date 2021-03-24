@@ -75,3 +75,26 @@ test('Test 8 - page -1, 5 items per page', () => {
   // Assert
   expect(actual).toEqual(expected)
 })
+
+test('Test 9 - bad page', () => {
+  // Assert
+  expect(() => { solution('1', 5, data) }).toThrow('Please pass a valid page number')
+  expect(() => { solution(1.1, 5, data) }).toThrow('Please pass a valid page number')
+  expect(() => { solution(true, 5, data) }).toThrow('Please pass a valid page number')
+  expect(() => { solution({}, 5, data) }).toThrow('Please pass a valid page number')
+})
+
+test('Test 9 - bad items per page', () => {
+  // Assert
+  expect(() => { solution(1, '5', data) }).toThrow('Please pass a valid number of items')
+  expect(() => { solution(1, 5.6, data) }).toThrow('Please pass a valid number of items')
+  expect(() => { solution(1, true, data) }).toThrow('Please pass a valid number of items')
+  expect(() => { solution(1, {}, data) }).toThrow('Please pass a valid number of items')
+})
+
+test('Test 10 - bad page data', () => {
+  // Assert
+  expect(() => { solution(1, 5, {}) }).toThrow('Please pass a valid array as page data')
+  expect(() => { solution(1, 5, true) }).toThrow('Please pass a valid array as page data')
+  expect(() => { solution(1, 5, '') }).toThrow('Please pass a valid array as page data')
+})

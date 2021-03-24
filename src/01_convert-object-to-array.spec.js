@@ -35,3 +35,25 @@ test('should convert a dynamically created object to array', () => {
   // Assert
   expect(actual).toEqual(expected)
 })
+
+test('should convert a empty object to array', () => {
+  // Arrange
+  const input = {}
+  const expected = []
+
+  // Act
+  const actual = solution(input)
+
+  // Assert
+  expect(actual).toEqual(expected)
+})
+
+test('should throw error for numbers', () => {
+  // Assert
+  expect(() => { solution(0) }).toThrow('Please pass an Object')
+})
+
+test('should throw error for arrays', () => {
+  // Assert
+  expect(() => { solution([]) }).toThrow('Please pass an Object')
+})
